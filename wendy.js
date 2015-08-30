@@ -3,7 +3,7 @@ var express = require('express');
 
 var sever = http.createServer(function (req, res) {
   // body...
-  res.end("\你好!");
+  res.end("Do you know I love U?");
 })
 
 sever.listen(8080, function (error) {
