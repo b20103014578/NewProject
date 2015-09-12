@@ -18,7 +18,7 @@ var Phone = mongoose.model('Phone');
 
 app.get('/PhoneCreate',function (req,res) {
   // body...
-  Phone.Create({
+  Phone.create({
     name : "MyName",
     number : "123-456-789"
   },function (err, data) {
