@@ -52,14 +52,14 @@ app.get('/PhoneFind',function (req,res) {
     return res.send("Null");
   }
 
-  Phone.find({name : name_create,function (err,Phones) {
+  Phone.find({name : name_create},function (err,Phones) {
     // body...
     if(err)
     {
       return res.send(err);
     }
     res.json(Phones);
-  }})
+  })
 })
 
 //  Listen port 80
