@@ -1,6 +1,6 @@
 require('./node_model');
 
-var module = require('module');
+var mongoose = require('mongoose');
 
 var Phone = mongoose.model('phone');
 
