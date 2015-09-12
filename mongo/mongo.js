@@ -13,7 +13,7 @@ var Phone = new Schema({
   number : String
 });
 
-mongoose.modle('Phone' , Phone);
+mongoose.model('Phone' , Phone);
 
 app.get('/PhoneCreate',function (req,res) {
   // body...
