@@ -18,12 +18,12 @@ app.get('/PhoneCreate',function (req,res) {
     return res.send("Null");
   }
 
-  Phone.Create(name_create,phone_create,function (err,phones) {
-    // body...
-    if(err)
-      return res.send("Error!!!");
-    res.json(phones);
-  })
+  // Phone.Create(name_create,phone_create,function (err,phones) {
+  //   // body...
+  //   if(err)
+  //     return res.send("Error!!!");
+  //   res.json(phones);
+  // })
 })
 
 //  Search data
@@ -36,12 +36,12 @@ app.get('/PhoneFind',function (req,res) {
     return res.send("Null");
   }
 
-  Phone.Find(name_create,function (err, phones) {
-    // body...
-    if(err)
-      return res.send("Find Error!!");
-    res.json(phones);
-  })
+  // Phone.Find(name_create,function (err, phones) {
+  //   // body...
+  //   if(err)
+  //     return res.send("Find Error!!");
+  //   res.json(phones);
+  // })
 })
 
 //  Listen port 80
