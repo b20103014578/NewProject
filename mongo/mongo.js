@@ -18,9 +18,17 @@ var Phone = mongoose.model('Phone');
 
 app.get('/PhoneCreate',function (req,res) {
   // body...
+  var name_create = req.query.name;
+  var phone_create = req.query.number;
+
+  if(!name_create || !phone_create)
+  {
+    return console.log("Null");
+  }
+
   Phone.create({
-    name : "MyName",
-    number : "123-456-789"
+    name : name_create,
+    number : phone_create
   },function (err, data) {
     // body...
     if(err)
