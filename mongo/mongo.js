@@ -1,20 +1,11 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var Phone = require('./lib/Phone');
 
 var app = express();
 
 //  connext to mongodb
 mongoose.connect('mongodb://10.240.4.144:27017/MyDatabase');
-
-var Schema = mongoose.Schema;
-
-var PhoneModel = new Schema({
-  name : String,
-  number : String
-});
-
-mongoose.model('Phone' , PhoneModel);
-var Phone = mongoose.model('Phone');
 
 //  Create data
 app.get('/PhoneCreate',function (req,res) {
@@ -27,18 +18,11 @@ app.get('/PhoneCreate',function (req,res) {
     return res.send("Null");
   }
 
-  Phone.create({
-    name : name_create,
-    number : phone_create
-  },function (err, data) {
+  phone.Create(name_create,phone_create,function (err,phones) {
     // body...
     if(err)
-    {
-      console.log("Eror");
-      return res.send(err);
-    }
-    res.send('Phone : '+data);
-    // res.json(data);
+      return res.send("Error!!!");
+    res.json(phones);
   })
 })
 
@@ -52,13 +36,11 @@ app.get('/PhoneFind',function (req,res) {
     return res.send("Null");
   }
 
-  Phone.find({name : name_create},function (err,Phones) {
+  phone.Find(name_create,function (err, phones) {
     // body...
     if(err)
-    {
-      return res.send(err);
-    }
-    res.json(Phones);
+      return res.send("Find Error!!");
+    res.json(phones);
   })
 })
 
