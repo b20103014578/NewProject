@@ -13,7 +13,8 @@ var PhoneModel = new Schema({
   number : String
 });
 
-var Phone = mongoose.model('Phone' , PhoneModel);
+mongoose.model('Phone' , PhoneModel);
+var Phone = mongoose.model('Phone');
 
 app.get('/PhoneCreate',function (req,res) {
   // body...
