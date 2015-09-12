@@ -5,7 +5,7 @@ var Phone = require('./lib/Phone');
 var app = express();
 
 //  connext to mongodb
-mongoose.connect('mongodb://10.240.4.144:27017/MyDatabase');
+// mongoose.connect('mongodb://10.240.4.144:27017/MyDatabase');
 
 //  Create data
 app.get('/PhoneCreate',function (req,res) {
@@ -18,12 +18,12 @@ app.get('/PhoneCreate',function (req,res) {
     return res.send("Null");
   }
 
-  // Phone.Create(name_create,phone_create,function (err,phones) {
-  //   // body...
-  //   if(err)
-  //     return res.send("Error!!!");
-  //   res.json(phones);
-  // })
+  Phone.Create(name_create,phone_create,function (err,phones) {
+    // body...
+    if(err)
+      return res.send("Error!!!");
+    res.json(phones);
+  })
 })
 
 //  Search data
@@ -36,12 +36,12 @@ app.get('/PhoneFind',function (req,res) {
     return res.send("Null");
   }
 
-  // Phone.Find(name_create,function (err, phones) {
-  //   // body...
-  //   if(err)
-  //     return res.send("Find Error!!");
-  //   res.json(phones);
-  // })
+  Phone.Find(name_create,function (err, phones) {
+    // body...
+    if(err)
+      return res.send("Find Error!!");
+    res.json(phones);
+  })
 })
 
 //  Listen port 80
