@@ -16,6 +16,7 @@ var PhoneModel = new Schema({
 mongoose.model('Phone' , PhoneModel);
 var Phone = mongoose.model('Phone');
 
+//  Create data
 app.get('/PhoneCreate',function (req,res) {
   // body...
   var name_create = req.query.name;
@@ -23,7 +24,7 @@ app.get('/PhoneCreate',function (req,res) {
 
   if(!name_create || !phone_create)
   {
-    return console.log("Null");
+    return res.send("Null");
   }
 
   Phone.create({
@@ -41,6 +42,27 @@ app.get('/PhoneCreate',function (req,res) {
   })
 })
 
+//  Search data
+app.get('/PhoneFind',function (req,res) {
+  // body...
+  var name_create = req.query.name;
+
+  if(!name_create)
+  {
+    return res.send("Null");
+  }
+
+  Phone.find({name : name_create,function (err,Phones) {
+    // body...
+    if(err)
+    {
+      return res.send(err);
+    }
+    res.json(Phones);
+  }})
+})
+
+//  Listen port 80
 app.listen(80,function (err) {
   // body...
   if(err){
