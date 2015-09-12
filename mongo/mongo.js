@@ -6,7 +6,7 @@ var app = express();
 //  connext to mongodb
 mongoose.connect('mongodb://10.240.4.144:27017/MyDatabase');
 
-var Schema = mongoose.Schema();
+var Schema = mongoose.Schema;
 
 var Phone = new Schema({
   name : String,
