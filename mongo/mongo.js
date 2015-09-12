@@ -18,7 +18,7 @@ app.get('/PhoneCreate',function (req,res) {
     return res.send("Null");
   }
 
-  phone.Create(name_create,phone_create,function (err,phones) {
+  Phone.Create(name_create,phone_create,function (err,phones) {
     // body...
     if(err)
       return res.send("Error!!!");
@@ -36,7 +36,7 @@ app.get('/PhoneFind',function (req,res) {
     return res.send("Null");
   }
 
-  phone.Find(name_create,function (err, phones) {
+  Phone.Find(name_create,function (err, phones) {
     // body...
     if(err)
       return res.send("Find Error!!");
