@@ -2,7 +2,7 @@ require('./node_model');
 
 var mongoose = require('mongoose');
 
-var Phone = mongoose.model('phone');
+var Phone = mongoose.model('Phone');
 
 //  Create
 function Create(name, number, callback){
