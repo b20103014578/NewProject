@@ -31,3 +31,11 @@ app.get('/PhoneCreate',function (req,res) {
     // res.json(data);
   })
 })
+
+app.listen(80,function (err) {
+  // body...
+  if(err){
+    return console.log("Error");
+  }
+  console.log("Sever Start!");
+})
