@@ -8,16 +8,16 @@ mongoose.connect('mongodb://10.240.4.144:27017/MyDatabase');
 
 var Schema = mongoose.Schema;
 
-var Phone = new Schema({
+var PhoneModel = new Schema({
   name : String,
   number : String
 });
 
-mongoose.model('Phone' , Phone);
+var Phone = mongoose.model('Phone' , PhoneModel);
 
 app.get('/PhoneCreate',function (req,res) {
   // body...
-  Phone.create({
+  Phone.Create({
     name : "MyName",
     number : "123-456-789"
   },function (err, data) {
